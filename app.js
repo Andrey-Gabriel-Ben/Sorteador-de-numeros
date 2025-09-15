@@ -1,19 +1,24 @@
+let numerosSorteados = [];
+
 function sortear() {
     let QuantidadeASortear = parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
     let ate  = parseInt(document.getElementById("ate").value);
-    let numerosSorteados = [];
-    let valorsorteado;
-
     for (let i=0; i < QuantidadeASortear; i++) {
-        valorsorteado = obterNumero(de, ate);
-        numerosSorteados.push(valorsorteado)
+        obterNumero(de, ate);
     }
 
     alert(numerosSorteados);
  }
 
  function obterNumero(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    let valorsorteado = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (numerosSorteados.includes(valorsorteado)) {
+        return obterNumero(min, max);
+    } else {
+        numerosSorteados.push(valorsorteado)
+        return valorsorteado;
+    }
+   
  }
 
