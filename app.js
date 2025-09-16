@@ -21,9 +21,9 @@ function sortear() {
    
  }
 
+ 
  function exibirResultado(numerosGerados) {
     let listaDeNumeros = numerosGerados.join(", ")
     let resultado = document.getElementById("resultado")
-    resultado.innerHTML = `Números sorteados: ${listaDeNumeros}`
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${listaDeNumeros}.</label>`
  }
-
