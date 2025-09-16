@@ -7,8 +7,7 @@ function sortear() {
     for (let i=0; i < QuantidadeASortear; i++) {
         obterNumero(de, ate);
     }
-
-    alert(numerosSorteados);
+    exibirResultado(numerosSorteados)
  }
 
  function obterNumero(min, max) {
@@ -20,5 +19,11 @@ function sortear() {
         return valorsorteado;
     }
    
+ }
+
+ function exibirResultado(numerosGerados) {
+    let listaDeNumeros = numerosGerados.join(", ")
+    let resultado = document.getElementById("resultado")
+    resultado.innerHTML = `Números sorteados: ${listaDeNumeros}`
  }
 
