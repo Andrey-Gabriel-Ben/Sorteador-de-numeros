@@ -45,6 +45,7 @@ function sortear() {
     limparCampo("quantidade");
     limparCampo("de");
     limparCampo("ate");
+    numerosSorteados = []
     alterarStatusBotão();
  }
 
