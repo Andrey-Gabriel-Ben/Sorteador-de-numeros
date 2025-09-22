@@ -38,3 +38,18 @@ function sortear() {
         botão.classList.add("container__botao-desabilitado");
     };
  };
+
+ function reiniciar() {
+    let mensagen = document.getElementById("resultado");
+    mensagen.innerHTML = `<label class="texto__paragrafo">Nenhum número sorteado ainda.</label>`;
+    limparCampo("quantidade");
+    limparCampo("de");
+    limparCampo("ate");
+    alterarStatusBotão();
+ }
+
+ function limparCampo(id) {
+    let campo = document.getElementById(id);
+    campo.value = "";
+ }
+ 
