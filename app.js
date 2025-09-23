@@ -6,13 +6,17 @@ function sortear() {
     let ate  = parseInt(document.getElementById("ate").value);
     if (ate <= de) {
         alert('O valor posto no campo "Do número" deve ser inferior ao do campo "Até o número". Verifique e tente novamente!');
+        reiniciar;
         return;
     };
-
+    if (QuantidadeASortear >= ate - de) {
+        alert('Me parece que a quantidade de números disponíveis para serem sorteados é insuficiente para atingir a quantidade de números aleatórios desejada, verifique os campos e tente novamente!');
+        reiniciar();
+        return;
+    };
     for (let i=0; i < QuantidadeASortear; i++) {obterNumero(de, ate)};
     exibirResultado(numerosSorteados);
     alterarStatusBotão();
-  
  }
 
  function obterNumero(min, max) {
