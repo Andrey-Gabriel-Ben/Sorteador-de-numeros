@@ -5,12 +5,13 @@ function sortear() {
     let de = parseInt(document.getElementById("de").value);
     let ate  = parseInt(document.getElementById("ate").value);
     if (ate <= de) {
-        alert("O número mínimo informado é maior que o número máximo, revise os campos e tente novamente");
-    } else {
-        for (let i=0; i < QuantidadeASortear; i++) {obterNumero(de, ate)};
-        exibirResultado(numerosSorteados);
-        alterarStatusBotão();
+        alert('O valor posto no campo "Do número" deve ser inferior ao do campo "Até o número". Verifique e tente novamente!');
+        return;
     };
+
+    for (let i=0; i < QuantidadeASortear; i++) {obterNumero(de, ate)};
+    exibirResultado(numerosSorteados);
+    alterarStatusBotão();
   
  }
 
