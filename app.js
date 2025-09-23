@@ -1,5 +1,6 @@
 let numerosSorteados = [];
 let botãoSortear = document.getElementById("btn-sortear");
+let botãoReiniciar = document.getElementById("btn-reiniciar");
 
 function sortear() {
     if (botãoSortear.classList.contains("container__botao-desabilitado")) {return;};
@@ -51,14 +52,15 @@ function sortear() {
  };
 
  function reiniciar() {
-    if (botão.classList.contains("container__botao-desabilitado")) {return;};
+    if (botãoReiniciar.classList.contains("container__botao-desabilitado")) {return;};
     let mensagen = document.getElementById("resultado");
     mensagen.innerHTML = `<label class="texto__paragrafo">Nenhum número sorteado ainda.</label>`;
     limparCampo("quantidade");
     limparCampo("de");
     limparCampo("ate");
     numerosSorteados = []
-    alterarStatusBotão();
+    alterarStatusBotão("btn-reiniciar");
+    alterarStatusBotão("btn-sortear");
  }
 
  function limparCampo(id) {
