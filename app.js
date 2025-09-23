@@ -37,7 +37,7 @@ function sortear() {
  };
 
  function alterarStatusBotão() {
-    let botão = document.getElementById("btn-reiniciar");
+    var botão = document.getElementById("btn-reiniciar");
     if (botão.classList.contains("container__botao-desabilitado")) {
         botão.classList.remove("container__botao-desabilitado");
         botão.classList.add("container__botao");
@@ -48,6 +48,7 @@ function sortear() {
  };
 
  function reiniciar() {
+    if (botão.classList.contains("container__botao-desabilitado")) {return;};
     let mensagen = document.getElementById("resultado");
     mensagen.innerHTML = `<label class="texto__paragrafo">Nenhum número sorteado ainda.</label>`;
     limparCampo("quantidade");
