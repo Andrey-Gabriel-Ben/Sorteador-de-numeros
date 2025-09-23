@@ -4,11 +4,14 @@ function sortear() {
     let QuantidadeASortear = parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
     let ate  = parseInt(document.getElementById("ate").value);
-    for (let i=0; i < QuantidadeASortear; i++) {
-        obterNumero(de, ate);
+    if (ate <= de) {
+        alert("O número mínimo informado é maior que o número máximo, revise os campos e tente novamente");
+    } else {
+        for (let i=0; i < QuantidadeASortear; i++) {obterNumero(de, ate)};
+        exibirResultado(numerosSorteados);
+        alterarStatusBotão();
     };
-    exibirResultado(numerosSorteados);
-    alterarStatusBotão();
+  
  }
 
  function obterNumero(min, max) {
