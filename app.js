@@ -1,6 +1,8 @@
 let numerosSorteados = [];
+let botãoSortear = document.getElementById("btn-sortear");
 
 function sortear() {
+    if (botãoSortear.classList.contains("container__botao-desabilitado")) {return;};
     let QuantidadeASortear = parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
     let ate  = parseInt(document.getElementById("ate").value);
@@ -16,7 +18,8 @@ function sortear() {
     };
     for (let i=0; i < QuantidadeASortear; i++) {obterNumero(de, ate)};
     exibirResultado(numerosSorteados);
-    alterarStatusBotão();
+    alterarStatusBotão("btn-reiniciar");
+    alterarStatusBotão("btn-sortear");
  }
 
  function obterNumero(min, max) {
@@ -36,8 +39,8 @@ function sortear() {
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${listaDeNumeros}.</label>`;
  };
 
- function alterarStatusBotão() {
-    var botão = document.getElementById("btn-reiniciar");
+ function alterarStatusBotão(id) {
+    let botão = document.getElementById(id);
     if (botão.classList.contains("container__botao-desabilitado")) {
         botão.classList.remove("container__botao-desabilitado");
         botão.classList.add("container__botao");
